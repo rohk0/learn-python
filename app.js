@@ -198,6 +198,9 @@ function openChallenge(id) {
     document.getElementById("challengeDescription").textContent = lesson.challenge.description;
     document.getElementById("challengeEditor").value = lesson.challenge.starterCode;
     document.getElementById("challengeFeedback").classList.add("d-none");
+    document.getElementById("answerReveal").classList.add("d-none");
+    document.getElementById("revealBtn").disabled = false;
+    document.getElementById("revealBtn").innerHTML = '<i class="bi bi-eye me-1"></i>Reveal Answer';
 
     const modal = new bootstrap.Modal(document.getElementById("challengeModal"));
     modal.show();
@@ -250,6 +253,28 @@ function submitChallenge() {
         feedback.innerHTML = `<i class="bi bi-x-circle me-2"></i>Error: <code>${escapeHtml(err.toString())}</code>`;
         feedback.classList.remove("d-none");
     });
+}
+
+// ----- Reveal Answer -----
+function revealAnswer() {
+    const lesson = LESSONS.find(l => l.id === currentChallengeId);
+    if (!lesson || !lesson.challenge.answer) return;
+
+    const revealEl = document.getElementById("answerReveal");
+    const answerCodeEl = document.getElementById("answerCode");
+
+    answerCodeEl.textContent = lesson.challenge.answer;
+    revealEl.classList.remove("d-none");
+
+    document.getElementById("revealBtn").disabled = true;
+    document.getElementById("revealBtn").innerHTML = '<i class="bi bi-eye-fill me-1"></i>Revealed';
+}
+
+function useAnswer() {
+    const lesson = LESSONS.find(l => l.id === currentChallengeId);
+    if (!lesson || !lesson.challenge.answer) return;
+
+    document.getElementById("challengeEditor").value = lesson.challenge.answer;
 }
 
 // ----- Playground: Code Editor -----

@@ -31,6 +31,7 @@ const LESSONS = [
         challenge: {
             description: "Write a program that prints exactly: I love Python!",
             starterCode: '# Print "I love Python!" below\n',
+            answer: 'print("I love Python!")',
             validate: (output) => output.trim() === "I love Python!"
         }
     },
@@ -74,6 +75,7 @@ y = <span class="str">"hello"</span>
         challenge: {
             description: 'Create a variable called "language" with the value "Python" and print it.',
             starterCode: '# Create the variable and print it\n',
+            answer: 'language = "Python"\nprint(language)',
             validate: (output) => output.trim() === "Python"
         }
     },
@@ -128,6 +130,7 @@ age = <span class="num">25</span>
         challenge: {
             description: 'Create a variable word = "python" and print it in uppercase (PYTHON).',
             starterCode: '# Make it print PYTHON\n',
+            answer: 'word = "python"\nprint(word.upper())',
             validate: (output) => output.trim() === "PYTHON"
         }
     },
@@ -168,6 +171,7 @@ z = <span class="fn">str</span>(<span class="num">100</span>)         <span clas
         challenge: {
             description: "Calculate and print the result of 2 to the power of 10 (should print 1024).",
             starterCode: "# Print 2 raised to the power of 10\n",
+            answer: 'print(2 ** 10)',
             validate: (output) => output.trim() === "1024"
         }
     },
@@ -220,6 +224,7 @@ z = <span class="fn">str</span>(<span class="num">100</span>)         <span clas
         challenge: {
             description: 'Set number = 7. Print "positive" if it\'s greater than 0, "negative" if less, or "zero" if equal to 0.',
             starterCode: 'number = 7\n# Write your if/elif/else here\n',
+            answer: 'number = 7\n\nif number > 0:\n    print("positive")\nelif number < 0:\n    print("negative")\nelse:\n    print("zero")',
             validate: (output) => output.trim() === "positive"
         }
     },
@@ -272,6 +277,7 @@ fruits = [<span class="str">"apple"</span>, <span class="str">"banana"</span>, <
         challenge: {
             description: "Use a for loop to print the numbers 1 through 5, each on its own line.",
             starterCode: "# Print 1 to 5 using a for loop\n",
+            answer: 'for i in range(1, 6):\n    print(i)',
             validate: (output) => output.trim() === "1\n2\n3\n4\n5"
         }
     },
@@ -322,6 +328,7 @@ items.reverse()        <span class="cmt"># reverse in place</span>
         challenge: {
             description: 'Create a list with [10, 20, 30], append 40, and print the list.',
             starterCode: "# Create the list, append 40, then print\n",
+            answer: 'nums = [10, 20, 30]\nnums.append(40)\nprint(nums)',
             validate: (output) => output.trim() === "[10, 20, 30, 40]"
         }
     },
@@ -370,6 +377,7 @@ person[<span class="str">"age"</span>] = <span class="num">26</span>
         challenge: {
             description: 'Create a dictionary fruit_colors = {"apple": "red", "banana": "yellow"} and print fruit_colors["banana"].',
             starterCode: '# Create the dictionary and print the banana color\n',
+            answer: 'fruit_colors = {"apple": "red", "banana": "yellow"}\nprint(fruit_colors["banana"])',
             validate: (output) => output.trim() === "yellow"
         }
     },
@@ -414,6 +422,7 @@ lowest, highest = min_max([<span class="num">4</span>, <span class="num">2</span
         challenge: {
             description: "Write a function called square that takes a number and returns its square. Print square(5) (should print 25).",
             starterCode: "# Define the square function and test it\n",
+            answer: 'def square(n):\n    return n ** 2\n\nprint(square(5))',
             validate: (output) => output.trim() === "25"
         }
     },
@@ -459,6 +468,7 @@ b = {<span class="num">3</span>, <span class="num">4</span>, <span class="num">5
         challenge: {
             description: 'Create a tuple coords = (5, 10), unpack it into x and y, and print "5 10".',
             starterCode: '# Create the tuple, unpack, and print\n',
+            answer: 'coords = (5, 10)\nx, y = coords\nprint(x, y)',
             validate: (output) => output.trim() === "5 10"
         }
     },
@@ -505,6 +515,7 @@ unique_lengths = {<span class="fn">len</span>(w) <span class="kw">for</span> w <
         challenge: {
             description: "Use a list comprehension to create a list of squares of 1 through 5: [1, 4, 9, 16, 25] and print it.",
             starterCode: "# Create the list comprehension and print it\n",
+            answer: 'squares = [x**2 for x in range(1, 6)]\nprint(squares)',
             validate: (output) => output.trim() === "[1, 4, 9, 16, 25]"
         }
     },
@@ -557,6 +568,7 @@ unique_lengths = {<span class="fn">len</span>(w) <span class="kw">for</span> w <
         challenge: {
             description: 'Write a try/except that tries to convert "hello" to an int and prints "Error" if it fails.',
             starterCode: '# Use try/except to handle the error\n',
+            answer: 'try:\n    int("hello")\nexcept ValueError:\n    print("Error")',
             validate: (output) => output.trim() === "Error"
         }
     }
